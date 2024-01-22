@@ -1,0 +1,20 @@
+g={'5':['3','7'],'3':['2','4'],'7':['6','8'],'2':[],'4':[],'6':[],'8':[]}
+vis=[]
+k=[]
+goal='4'
+def bfs(vis,g,node):
+    vis.append(node)
+    k.append(node)
+    while k:
+        m=k.pop(0)
+        print(m,end=" ")
+        if goal not in vis:
+            for i in g[m]:
+                if i not in vis:
+                    vis.append(i)
+                    k.append(i)
+    if goal in vis:
+        print("\n",goal,"is found")
+    else:
+        print("\nnone")
+bfs(vis,g,'5')
