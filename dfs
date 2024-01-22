@@ -1,0 +1,16 @@
+g={'5':['3','7'],'3':['2','4'],'7':['6','8'],'2':[],'4':[],'6':[],'8':[]}
+vis=[]
+goal='4'
+def dfs(vis,g,node):
+    if node not in vis:
+        if goal not in vis:
+            print(node)
+            vis.append(node)
+            for i in g[node]:
+                dfs(vis,g,i)
+
+dfs(vis,g,'5')
+if goal in vis:
+    print("\n",goal,"is found")
+else:
+    print("\nnone")
